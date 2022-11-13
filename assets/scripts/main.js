@@ -69,6 +69,7 @@ async function getRecipes() {
   // A1. - Check local storage to see if there are any recipes.
   //            If there are recipes, return them.
   if(localStorage.getItem('recipes') !== null) {
+    console.log('test');
     return JSON.parse(localStorage.getItem('recipes'));
   }
   /**************************/
@@ -84,6 +85,7 @@ async function getRecipes() {
   //            you can call to either resolve the Promise or Reject it.
   return new Promise(async (resolve, reject) => {
     for(let URL of RECIPE_URLS) {
+      console.log("test");
       try {
         const response = await fetch(URL);
         const newRecipe = await response.json();
